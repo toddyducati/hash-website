@@ -1,0 +1,446 @@
+---
+title: 'Tradelines | Superior Tradelines'
+description: 'Meta description for the page'
+preloadImg: '\assets\images\pexels-pixabay-302831.jpg'
+permalink: 'tradelines/'
+eleventyNavigation:
+    key: View Tradelines
+    order: 500
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/tradelines.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Available Tradelines</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="\assets\images\pexels-pixabay-302831.jpg">
+            <source media="(min-width: 601px)" srcset="\assets\images\pexels-pixabay-302831.jpg">
+            <img aria-hidden="true" decoding="async" src="\assets\images\pexels-pixabay-302831.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+<!-- ============================================ -->
+<!--                    Table                     -->
+<!-- ============================================ -->
+
+<!--
+    To add additional tables, copy and paste the cs-button and change it's data-filter to th next number, in this case it's "seven". Do the same to the cs-table-wrapper and its data-category number. And thats it!
+-->
+
+<section id="table-1835">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Tradelines For Sale</span>
+            <h2 class="cs-title">Our Available Tradelines</h2>
+            <div class="cs-button-group">
+                <button class="cs-button cs-active" data-filter="one">
+                    Available Tradelines
+                </button>
+                <button class="cs-button" data-filter="two">
+                    All Tradelines
+                </button>
+            </div>
+        </div>
+        <!--Table 1 - All-->
+    
+        <div class="cs-table-wrapper" data-category="one">
+            <table class="cs-table">
+                <thead class="cs-thead">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="col">Bank</th>
+                        <th class="cs-th" scope="col">Credit Limit</th>
+                        <th class="cs-th" scope="col">Date Opened</th>
+                        <th class="cs-th" scope="col">Purchase Deadline</th>
+                        <th class="cs-th" scope="col">Price</th>
+                        <th class="cs-th" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="cs-tbody">
+                    {% if collections.tradeline | length == 0 %}
+                        <h1>No Available Tradelines At This Time</h1>
+                    {% else %}
+                        {%- for tradeline in collections.tradeline -%}
+                            {% if tradeline.data.available %}
+                                <tr class="cs-tr">
+                                    <th class="cs-th" scope="row">{{ tradeline.data.bankName }}</th>
+                                    <td class="cs-td">{{ tradeline.data.creditLimit }}</td>
+                                    <td class="cs-td">{{ tradeline.data.dateOpened | postDate }}</td>
+                                    <td class="cs-td">{{ tradeline.date | postDate }}</td>
+                                    <td class="cs-td">{{ tradeline.data.price }}</td>
+                                    <td class="cs-td">
+                                        <a class="cs-cta" href="/">Purchase Now</a>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {%- endfor -%}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <!--Table 2 - Tuesday-->
+        <div class="cs-table-wrapper cs-hidden" data-category="two">
+            <table class="cs-table">
+                <thead class="cs-thead">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="col">Bank</th>
+                        <th class="cs-th" scope="col">Credit Limit</th>
+                        <th class="cs-th" scope="col">Date Opened</th>
+                        <th class="cs-th" scope="col">Purchase Deadline</th>
+                        <th class="cs-th" scope="col">Price</th>
+                        <th class="cs-th" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="cs-tbody">
+                    {% if collections.tradeline | length == 0 %}
+                        <h1>No Available Tradelines At This Time</h1>
+                    {% else %}
+                        {%- for tradeline in collections.tradeline -%}
+                            <tr class="cs-tr">
+                                <th class="cs-th" scope="row">{{ tradeline.data.bankName }}</th>
+                                <td class="cs-td">{{ tradeline.data.creditLimit }}</td>
+                                <td class="cs-td">{{ tradeline.data.dateOpened | postDate }}</td>
+                                <td class="cs-td">{{ tradeline.date | postDate }}</td>
+                                <td class="cs-td">{{ tradeline.data.price }}</td>
+                                <td class="cs-td">
+                                    {% if tradeline.data.available %}
+                                        <a class="cs-cta" href="/">Purchase Now</a>
+                                    {% else %}
+                                        <a class="cs-cta disabled" >Not Available</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {%- endfor -%}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <!--Table 3 - Wednesday-->
+        <div class="cs-table-wrapper cs-hidden" data-category="three">
+            <table class="cs-table">
+                <thead class="cs-thead">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="col">Class</th>
+                        <th class="cs-th" scope="col">Class Name</th>
+                        <th class="cs-th" scope="col">Class Time</th>
+                        <th class="cs-th" scope="col">Instructor</th>
+                        <th class="cs-th" scope="col">Book</th>
+                    </tr>
+                </thead>
+                <tbody class="cs-tbody">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">01</th>
+                        <td class="cs-td">Weight Lifting</td>
+                        <td class="cs-td">9:00AM - 10:00AM</td>
+                        <td class="cs-td">Wade Warren</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">02</th>
+                        <td class="cs-td">PowerPlay Fitness Fusion</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Cameron Williamson</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">03</th>
+                        <td class="cs-td">CardioCombat Craze</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Esther Howard</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">04</th>
+                        <td class="cs-td">MuscleMelt Madness</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Racheel Moor</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">05</th>
+                        <td class="cs-td">CoreCrush Challenge</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Robert Fox</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">06</th>
+                        <td class="cs-td">HighIntensity Havoc</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ralph Edwards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">07</th>
+                        <td class="cs-td">TotalBody Triumph</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ronald Richards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--Table 4 - Thursday-->
+        <div class="cs-table-wrapper cs-hidden" data-category="four">
+            <table class="cs-table">
+                <thead class="cs-thead">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="col">Class</th>
+                        <th class="cs-th" scope="col">Class Name</th>
+                        <th class="cs-th" scope="col">Class Time</th>
+                        <th class="cs-th" scope="col">Instructor</th>
+                        <th class="cs-th" scope="col">Book</th>
+                    </tr>
+                </thead>
+                <tbody class="cs-tbody">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">01</th>
+                        <td class="cs-td">Weight Lifting</td>
+                        <td class="cs-td">9:00AM - 10:00AM</td>
+                        <td class="cs-td">Wade Warren</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">02</th>
+                        <td class="cs-td">PowerPlay Fitness Fusion</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Cameron Williamson</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">03</th>
+                        <td class="cs-td">CardioCombat Craze</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Esther Howard</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">04</th>
+                        <td class="cs-td">MuscleMelt Madness</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Racheel Moor</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">05</th>
+                        <td class="cs-td">CoreCrush Challenge</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Robert Fox</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">06</th>
+                        <td class="cs-td">HighIntensity Havoc</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ralph Edwards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">07</th>
+                        <td class="cs-td">TotalBody Triumph</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ronald Richards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--Table 5 - Friday-->
+        <div class="cs-table-wrapper cs-hidden" data-category="five">
+            <table class="cs-table">
+                <thead class="cs-thead">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="col">Class</th>
+                        <th class="cs-th" scope="col">Class Name</th>
+                        <th class="cs-th" scope="col">Class Time</th>
+                        <th class="cs-th" scope="col">Instructor</th>
+                        <th class="cs-th" scope="col">Book</th>
+                    </tr>
+                </thead>
+                <tbody class="cs-tbody">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">01</th>
+                        <td class="cs-td">Weight Lifting</td>
+                        <td class="cs-td">9:00AM - 10:00AM</td>
+                        <td class="cs-td">Wade Warren</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">02</th>
+                        <td class="cs-td">PowerPlay Fitness Fusion</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Cameron Williamson</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">03</th>
+                        <td class="cs-td">CardioCombat Craze</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Esther Howard</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">04</th>
+                        <td class="cs-td">MuscleMelt Madness</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Racheel Moor</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">05</th>
+                        <td class="cs-td">CoreCrush Challenge</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Robert Fox</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">06</th>
+                        <td class="cs-td">HighIntensity Havoc</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ralph Edwards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">07</th>
+                        <td class="cs-td">TotalBody Triumph</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ronald Richards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--Table 6 - Saturday-->
+        <div class="cs-table-wrapper cs-hidden" data-category="six">
+            <table class="cs-table">
+                <thead class="cs-thead">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="col">Class</th>
+                        <th class="cs-th" scope="col">Class Name</th>
+                        <th class="cs-th" scope="col">Class Time</th>
+                        <th class="cs-th" scope="col">Instructor</th>
+                        <th class="cs-th" scope="col">Book</th>
+                    </tr>
+                </thead>
+                <tbody class="cs-tbody">
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">01</th>
+                        <td class="cs-td">Weight Lifting</td>
+                        <td class="cs-td">9:00AM - 10:00AM</td>
+                        <td class="cs-td">Wade Warren</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">02</th>
+                        <td class="cs-td">PowerPlay Fitness Fusion</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Cameron Williamson</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">03</th>
+                        <td class="cs-td">CardioCombat Craze</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Esther Howard</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">04</th>
+                        <td class="cs-td">MuscleMelt Madness</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Racheel Moor</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">05</th>
+                        <td class="cs-td">CoreCrush Challenge</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Robert Fox</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">06</th>
+                        <td class="cs-td">HighIntensity Havoc</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ralph Edwards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                    <tr class="cs-tr">
+                        <th class="cs-th" scope="row">07</th>
+                        <td class="cs-td">TotalBody Triumph</td>
+                        <td class="cs-td">9.00AM - 10.00AM</td>
+                        <td class="cs-td">Ronald Richards</td>
+                        <td class="cs-td">
+                            <a class="cs-cta" href="/">Join Now</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <img class="cs-background" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-table-bg.png" alt="background" height="1920" width="995" loading="lazy" decoding="async">
+</section>
+                                
+{% endblock %}

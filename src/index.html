@@ -1,0 +1,760 @@
+---
+title: "Home | Superior Tradelines"
+description: "Meta description for the page"
+preloadImg: "/assets/images/landing.jpg"
+permalink: "/"
+tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+<link rel="stylesheet" href="/assets/css/critical.css" />
+
+<!-- Script for Netlify Identity -->
+<script
+  defer
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+></script>
+<script defer>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "{{ client.name }}",
+      {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+      {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+      {% if client.email %}"email": "{{ client.email }}",{% endif %}
+      {% if client.address %}
+          "address": {
+              "@type": "PostalAddress"{% if client.address.lineOne %},
+                  "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+              {% endif %}
+              {% if client.address.city %},
+                  "addressLocality": "{{ client.address.city }}"
+              {% endif %}
+              {% if client.address.state %},
+                  "addressRegion": "{{ client.address.state }}"
+              {% endif %}
+              {% if client.address.zip %},
+                  "postalCode": "{{ client.address.zip }}"
+              {% endif %}
+              {% if client.address.country %},
+                  "addressCountry": "{{ client.address.country }}"
+              {% endif %}
+          },
+      {% endif %}
+      {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+      {% if client.socials %}
+          "sameAs": [{% for platform, url in client.socials %}
+                  {% if not loop.first %},{% endif %}
+                  "{{ url }}"
+              {% endfor %}]
+      {% endif %}
+  }
+</script>
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-1467">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h1 class="cs-title">The Path to Credit Repair Starts Here</h1>
+      <p class="cs-text">
+        Our mission is to assist you in unlocking your credit potential. Through the process known as “Credit Enhancement”, we can help you enhance your credit reports by adding positive credit accounts.
+      </p>
+      <a href="" class="cs-button-solid">Learn More</a>
+      <div class="cs-reviews" aria-hidden="true">
+        <div class="cs-reviews-flex">
+          <img
+            class="cs-reviews-img"
+            decoding="async"
+            fetchpriority="high"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile1.png"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+          <img
+            class="cs-reviews-img"
+            decoding="async"
+            fetchpriority="high"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile2.png"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+          <img
+            class="cs-reviews-img"
+            decoding="async"
+            fetchpriority="high"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile3.png"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+          <img
+            class="cs-reviews-img"
+            decoding="async"
+            fetchpriority="high"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile4.png"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+          <img
+            class="cs-reviews-img"
+            decoding="async"
+            fetchpriority="high"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile5.png"
+            alt="icon"
+            width="48"
+            height="48"
+          />
+          <span class="cs-reviews-number">+4k</span>
+        </div>
+      </div>
+      <div class="cs-stars">
+        <img
+          class="cs-icon"
+          decoding="async"
+          fetchpriority="high"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg"
+          alt="icon"
+          width="16"
+          height="16"
+        />
+        <img
+          class="cs-icon"
+          decoding="async"
+          fetchpriority="high"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg"
+          alt="icon"
+          width="16"
+          height="16"
+        />
+        <img
+          class="cs-icon"
+          decoding="async"
+          fetchpriority="high"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg"
+          alt="icon"
+          width="16"
+          height="16"
+        />
+        <img
+          class="cs-icon"
+          decoding="async"
+          fetchpriority="high"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg"
+          alt="icon"
+          width="16"
+          height="16"
+        />
+        <img
+          class="cs-icon"
+          decoding="async"
+          fetchpriority="high"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg"
+          alt="icon"
+          width="16"
+          height="16"
+        />
+      </div>
+      <p class="cs-desc">4.9/5 based on 359 reviews.</p>
+    </div>
+    <div class="cs-right">
+      <span class="cs-tag">
+        Tradelines Going Fast
+        <span class="cs-dot" aria-hidden="true"></span>
+      </span>
+      <div class="cs-flex">
+        <h3 class="cs-h3">Get Started Now!</h3>
+        <span class="cs-expires">Send us a message and a expert from our team will contact you</span>
+        <p class="cs-form-text">
+          Request a free, no-obligation consultation
+        </p>
+      </div>
+      <!--Form-->
+      <form class="cs-form" id="cs-form-1467" name="Contact Form" method="post">
+        <label class="cs-label">
+          Name
+          <input
+            class="cs-input"
+            required
+            type="text"
+            id="name-1467"
+            name="name"
+          />
+        </label>
+        <label class="cs-label">
+          Phone
+          <input
+            class="cs-input"
+            required
+            type="tel"
+            id="phone-1467"
+            name="phone"
+          />
+        </label>
+        <label class="cs-label">
+          Email
+          <input
+            class="cs-input"
+            required
+            type="email"
+            id="email-1467"
+            name="email"
+          />
+        </label>
+        <label class="cs-label">
+          How did you hear about us?
+          <input
+            class="cs-input"
+            required
+            type="text"
+            id="hear-1467"
+            name="heat"
+          />
+        </label>
+        <label class="cs-label cs-message">
+          Message
+          <textarea
+            class="cs-input cs-textarea"
+            required
+            name="Message"
+            id="message-1467"
+          ></textarea>
+        </label>
+        <button class="cs-button-solid cs-submit" type="submit">
+          Schedule a Consultation
+        </button>
+      </form>
+      <p class="cs-disclaimer">
+        <img
+          class="cs-disclaimer-icon"
+          decoding="async"
+          fetchpriority="high"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/lock.svg"
+          alt="icon"
+          width="20"
+          height="20"
+        />
+        *By sumbitting this form, you grant Superior Tradelines LLC permission to contact you via email, phone or SMS.
+      </p>
+    </div>
+  </div>
+
+  <!-- Background Image, added in CSS as a backgorund image for parallax effect -->
+  <picture class="cs-background">
+    <source
+      media="(max-width: 600px)"
+      srcset="
+        https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/field-m.jpg
+      "
+    />
+    <source
+      media="(min-width: 601px)"
+      srcset="
+        https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/field.jpg
+      "
+    />
+    <img
+      loading="lazy"
+      decoding="async"
+      src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/field.jpg"
+      alt="field"
+      width="1920"
+      height="1200"
+      aria-hidden="true"
+    />
+  </picture>
+</section>
+
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs-1443">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="\assets\images\pexels-olly-789822.jpg">
+            <source media="(min-width: 601px)" srcset="\assets\images\pexels-olly-789822.jpg">
+            <img loading="lazy" decoding="async" src="\assets\images\pexels-olly-789822.jpg" alt="volunteers" width="650" height="600" aria-hidden="true">
+        </picture>
+        <div class="cs-content">
+            <span class="cs-topper">Our Mission</span>
+            <h2 class="cs-title">Achieve Your Credit Potential</h2>
+            <p class="cs-text">
+                Our mission is to assist you in credit repair and enhancement by adding positive credit accounts to your credit report. By becoming an authorized user on established tradelines, you can take advantage of consumer protection and equal opportunity laws. It’s a straightforward and effective method that can make a significant impact on your creditworthiness.
+            </p>
+            <ul class="cs-card-group">
+                <li class="cs-li">
+                    <picture class="cs-li-picture">
+                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/volunteer1.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Credit Repair</h3>
+                        <p class="cs-li-text">
+                            If you are looking for credit repair options, we have tradlines that can help! We've assisted over 30,000 customers in repairing their credit score.
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-li-picture">
+                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/volunteer2.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Our Expert Team</h3>
+                        <p class="cs-li-text">
+                            Superior Tradelines expert team will help advise you through the tradeline process. We have been in business for 15+ years and have over 40 years of combined experience on staff.
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-li-picture">
+                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/volunteer3.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Tradeline Variety</h3>
+                        <p class="cs-li-text">
+                            With a wide variety of tradlines, we are able to fill anyone's needs. We've perfected the process of buying and selling tradelines
+                        </p>
+                    </div>
+                </li>
+            </ul>     
+            <a href="" class="cs-button-solid">View Tradelines</a>        
+        </div>
+    </div>
+</section>
+                                
+
+<!-- ============================================ -->
+<!--                   Services                   -->
+<!-- ============================================ -->
+
+<section id="steps-1290">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex-group">
+                <span class="cs-topper">Our Services</span>
+                <h2 class="cs-title">How It Works</h2>
+            </div>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa ut sed odio cursus. Malesuada scelerisque eget eu, sollicitudin tellus nibh aenean enim sed. Ut vitae eget commodo consectetur felis augue.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-book.png">
+                        <source media="(min-width: 601px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-book.png">
+                        <img loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-book.png"
+                            alt="cleaner" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">
+                        <span class="cs-number">01</span>
+                        Evaluation
+                    </h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa ut sed odio cursus.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-sketch.png">
+                        <source media="(min-width: 601px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-sketch.png">
+                        <img loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-sketch.png"
+                            alt="cleaner" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">
+                        <span class="cs-number">02</span>
+                        Application
+                    </h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa ut sed odio cursus.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-builder.png">
+                        <source media="(min-width: 601px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-builder.png">
+                        <img loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-builder.png"
+                            alt="cleaner" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">
+                        <span class="cs-number">03</span>
+                        Enhancement
+                    </h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa ut sed odio cursus.
+                    </p>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-machine.png">
+                        <source media="(min-width: 601px)"
+                            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-machine.png">
+                        <img loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction-machine.png"
+                            alt="cleaner" width="413" height="240" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">
+                        <span class="cs-number">04</span>
+                        Credit Boost
+                    </h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa ut sed odio cursus.
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <picture class="cs-background">
+        <img src="assets/svgs/waves2-crop.svg" alt="waves">
+    </picture>
+</section>
+                                
+<!-- ============================================ -->
+<!--                  Donations                   -->
+<!-- ============================================ -->
+
+<section id="donations-1428">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">What We Provide</span>
+            <h2 class="cs-title">Protected Premium Tradelines</h2>
+            <p class="cs-text">
+                At Superior Tradelines, we specialize in helping individuals and businesses unlock their financial potential. With our premium tradeline services, you can enhance your credit profile, improve your financial credibility, and achieve your goals faster. 
+            </p>
+            <a href="" class="cs-button-solid">View Our Tradelines</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/factory.jpg">
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/factory.jpg">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/factory.jpg" alt="factory" width="305" height="240">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Verified Seasoned Tradelines</h3>
+                        <p class="cs-item-text">
+                            Unlike other vendors, we offer only top-tier, carefully vetted tradelines from seasoned and reliable sources.
+                        </p>
+                        <a href="" class="cs-card-link">
+                            Learn About Credit Repair
+                            <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/event-chevron.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                        </a>
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture" aria-hidden="true">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/table.jpg">
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/table.jpg">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/table.jpg" alt="desk" width="305" height="240">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Tailored for Credit Repair</h3>
+                        <p class="cs-item-text">
+                            Our experts analyze your unique credit situation and recommend tradelines that align with your specific goals to repair and enhance credit.
+                        </p>
+                        <a href="" class="cs-card-link">
+                            Learn About Tradelines
+                            <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/event-chevron.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                        </a>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--Stats Group-->
+    <div class="cs-stats-container">
+        <ul class="cs-stats-group">
+            <li class="cs-stat">
+                <picture class="cs-icon-wrapper">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/piggybank.svg" alt="icon" width="48" height="48">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-stat-number">8M+</span>
+                    <span class="cs-desc">Cumulative Credit Score Increase</span>
+                </div>
+            </li>
+            <li class="cs-stat">
+                <picture class="cs-icon-wrapper">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/hands.svg" alt="icon" width="48" height="48">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-stat-number">30k+</span>
+                    <span class="cs-desc">Satisfied Tradeline Customers</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Background Graphic -->
+    <picture class="cs-background">
+        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/waves5.svg" alt="waves" >
+    </picture>
+</section>
+                                
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+<section id="reviews-510">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-title-group">
+                <span class="cs-topper">Reviews</span>
+                <h2 class="cs-title">What People Say</h2>
+            </div>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/quote-left-green.svg" decoding="async" alt="quote icon" width="40" height="46">
+                <p class="cs-item-text">
+                    Excellent service. Super knowledgeable and efficient. Mike and Kathy are amazing and I love working with them. Thank you all! Great team!!
+                </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile2.jpg" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">
+                        John Doe
+                        <span class="cs-job">Superior Tradelines Customer</span>
+                    </span>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!--Blue Quote-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/quote-left-green.svg" decoding="async" alt="quote icon" width="40" height="46">
+                <p class="cs-item-text">
+                    I highly recommend! This company is amazing, Its not just about taking money and halfway giving a Tradeline, Mike was amazing he provided me with information that not only helps for the now but for the long term goals for my credit. By far the best Tradeline company I've came in contact with.
+                </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile3.png" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
+                    </picture>
+                    <span class="cs-name">
+                        Jane Doe
+                        <span class="cs-job">Superior Tradelines Customer</span>
+                    </span>
+                </div>
+            </li>
+        </ul>
+        <a href="" class="cs-button-solid">Talk with Our Team</a>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    Events                    -->
+<!-- ============================================ -->
+
+<section id="events-1438">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Blog</span>
+            <h2 class="cs-title">Learn More About Tradelines</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture" aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-one.png">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-one.png">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-one.png" alt="people" width="305" height="180">
+                </picture>
+                <span class="cs-date">02 Dec, 2024</span>
+                <div class="cs-info">
+                    <h3 class="cs-h3">Sample Article 1</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="" class="cs-link">
+                        Read More
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/event-chevron.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                    </a>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture" aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-two.png">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-two.png">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-two.png" alt="people" width="305" height="180">
+                </picture>
+                <span class="cs-date">07 Sep, 2022</span>
+                <div class="cs-info">
+                    <h3 class="cs-h3">Sample Article 2</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="" class="cs-link">
+                        Read More
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/event-chevron.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                    </a>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture" aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/event2.jpg">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/event2.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/event2.jpg" alt="people" width="305" height="180">
+                </picture>
+                <span class="cs-date">07 Sep, 2022</span>
+                <div class="cs-info">
+                    <h3 class="cs-h3">Sample Article 3</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="" class="cs-link">
+                        Read More
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/event-chevron.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                    </a>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture" aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-three.png">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-three.png">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/non-profit-landscape-three.png" alt="people" width="305" height="180">
+                </picture>
+                <span class="cs-date">07 Sep, 2022</span>
+                <div class="cs-info">
+                    <h3 class="cs-h3">Sample Article 3</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="" class="cs-link">
+                        Read More
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/event-chevron.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <button class="cs-button-solid">See More Articles</button>
+    </div>
+    <picture class="cs-background">
+        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/waves5.svg" alt="waves" >
+    </picture>
+</section>
+                                
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="faq-1466">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="\assets\images\pexels-pixabay-210607.jpg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="\assets\images\pexels-pixabay-210607.jpg">
+            <img loading="lazy" decoding="async" src="\assets\images\pexels-pixabay-210607.jpg" alt="body shop" width="522" height="609" aria-hidden="true">
+        </picture>
+        <div class="cs-content">
+            <span class="cs-topper">Asked Questions</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+            <ul class="cs-faq-group">
+                <!-- Active class can be added as default -->
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Can you legally buy tradelines?
+                        </span>
+                    </button>
+                    <div class="cs-item-p">
+                        <p class="cs-text">
+                            Yes! In 1974, Congress passed a law called the Equal Credit Opportunity Act. The Federal Reserve’s updated Regulation B is really what made tradelines possible. That law and regulation work hand-in-hand. Hang in there! I’ll explain. That regulation provides:
+                        </p>
+                        <img loading="lazy" decoding="async" src="\assets\images\why-tradelines-are-legal.webp" alt="" width="100%" height="auto" aria-hidden="true">
+                        <p class="cs-text">
+                            Basically, if a bank allows a person to add his or her spouse as an authorized user, the bank must allow (i.e., cannot disallow) a person to add someone other than his or her spouse as an authorized user. This could be a family, friend, or complete stranger. So, you can pay to be added as an authorized user. If the account is in good standing, you will inherit that good payment history. We arrange for you to accomplish this method of credit improvement.
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Are tradelines worth it?
+                        </span>
+                    </button>
+                    <div class="cs-item-p">
+                        <p class="cs-text">
+                            In order to determine if its worth it, you have to consider your current credit situation and your goals. Tradelines may or may not work. If you have a thin credit file or a low credit score, adding a tradeline with a positive payment history and low utilization could help improve your credit profile. It’s always recommended to consult with a financial advisor or credit professional before making any decisions regarding tradelines or other credit-building strategies.
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How much will a tradeline boost my credit?
+                        </span>
+                    </button>
+                    <div class="cs-item-p">
+                        <p class="cs-text">
+                            The impact of adding a tradeline to your credit report can vary depending on several factors, including the age and type of the tradeline, your overall credit history, and the scoring model used by lenders. It is important to note that there is no way to guarantee how much it will boost your credit. The study we conducted reported that – on average (over 900 clients) – credit scores increased 88 points. But, you should <a href="/">review the details of that study.</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Can you legally buy tradelines?
+                        </span>
+                    </button>
+                    <div class="cs-item-p">
+                        <p class="cs-text">
+                            Yes! In 1974, Congress passed a law called the Equal Credit Opportunity Act. The Federal Reserve’s updated Regulation B is really what made tradelines possible. That law and regulation work hand-in-hand. Hang in there! I’ll explain. That regulation provides:
+                        </p>
+                        <img loading="lazy" decoding="async" src="\assets\images\why-tradelines-are-legal.webp" alt="" width="100%" height="auto" aria-hidden="true">
+                        <p class="cs-text">
+                            Basically, if a bank allows a person to add his or her spouse as an authorized user, the bank must allow (i.e., cannot disallow) a person to add someone other than his or her spouse as an authorized user. This could be a family, friend, or complete stranger. So, you can pay to be added as an authorized user. If the account is in good standing, you will inherit that good payment history. We arrange for you to accomplish this method of credit improvement.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+                                               
+{% include 'components/cta.html' %} {% endblock %}
