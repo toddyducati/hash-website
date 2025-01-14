@@ -1,0 +1,555 @@
+---
+title: "Home | Hash Hash Baby"
+description: "Meta description for the page"
+preloadImg: "/assets/images/landing.jpg"
+permalink: "/"
+tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+<link rel="stylesheet" href="/assets/css/critical.css" />
+
+<!-- Script for Netlify Identity -->
+<script
+  defer
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+></script>
+<script defer>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "{{ client.name }}",
+      {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+      {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+      {% if client.email %}"email": "{{ client.email }}",{% endif %}
+      {% if client.address %}
+          "address": {
+              "@type": "PostalAddress"{% if client.address.lineOne %},
+                  "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+              {% endif %}
+              {% if client.address.city %},
+                  "addressLocality": "{{ client.address.city }}"
+              {% endif %}
+              {% if client.address.state %},
+                  "addressRegion": "{{ client.address.state }}"
+              {% endif %}
+              {% if client.address.zip %},
+                  "postalCode": "{{ client.address.zip }}"
+              {% endif %}
+              {% if client.address.country %},
+                  "addressCountry": "{{ client.address.country }}"
+              {% endif %}
+          },
+      {% endif %}
+      {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+      {% if client.socials %}
+          "sameAs": [{% for platform, url in client.socials %}
+                  {% if not loop.first %},{% endif %}
+                  "{{ url }}"
+              {% endfor %}]
+      {% endif %}
+  }
+</script>
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                     Hero                     -->
+<!-- ============================================ -->
+
+<section id="hero-2153">
+    <div class="cs-background-video">
+        <!--Compress your video and upload it to a CDN like Digital Oceans Spaces so the video file doesn't cause load time issues. You can also remove the video tag and uncomment the picture tag to use a picture instead of a video.-->
+        <video class="cs-video" playsinline autoplay muted loop poster="">
+            <source src="../assets/videos/hempoilvideo.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Whole plant. Small batch. Pure quality.</span>
+                <h2 class="cs-title">CANNABIS CRAFTED FOR ALL</h2>
+                <p class="cs-text">We believe the best people create the best products for the best consumers. Every Hash Hash Baby product is crafted with skill, precision, and a commitment to delivering a premium experience for those who value quality.</p>
+                </div>
+            </div>
+            <!-- <p class="cs-text">We believe the best people create the best products for the best consumers. Every Hash Hash Baby product is crafted with skill, precision, and a commitment to delivering a premium experience for those who value quality.</p> -->
+        </div>
+
+    </div>
+</section>
+                                
+<!-- ============================================ -->
+<!--                  Collection                  -->
+<!-- ============================================ -->
+
+<section id="collection-1578">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Products</span>
+            <h2 class="cs-title">Quality Cannabis</h2>
+            <a href="" class="cs-button-solid">See More</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <span class="cs-category">Badders</span>
+                    <picture class="cs-background" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                        <source media="(min-width: 601px)"
+                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                        <img loading="lazy" decoding="async"
+                                src="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png"
+                                width="365" height="201" alt="shoes">
+                    </picture>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <span class="cs-category">Vapes</span>
+                    <picture class="cs-background" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="../assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png">
+                        <source media="(min-width: 601px)"
+                                srcset="../assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png">
+                        <img loading="lazy" decoding="async"
+                                src="../assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png" width="365"
+                                height="201" alt="purse">
+                    </picture>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <span class="cs-category">Resin</span>
+                    <picture class="cs-background" aria-hidden="true">
+                        <source media="(max-width: 600px)"
+                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                        <source media="(min-width: 601px)"
+                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                        <img loading="lazy" decoding="async"
+                                src="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png"
+                                width="365" height="201" alt="shoes">
+                    </picture>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+                                
+                                
+
+<!-- ============================================ -->
+<!--               Side By Side Pair              -->
+<!-- ============================================ -->
+
+<section id="RPsbs-2140">
+    <div class="cs-container">
+        <div class="cs-section1">
+            <div class="cs-content">
+                <span class="cs-topper">Why Choose Us</span>
+                <h2 class="cs-title">Whole Plant.</h2>
+                <h2 class="cs-title">Small Batch.</h2>
+                <h2 class="cs-title">Pure Quality.</h2>
+            </div>
+            <picture class="cs-picture1">
+                <source media="(max-width: 600px)" srcset="../assets/images/cannabisinhands.jpg">
+                <source media="(min-width: 601px)" srcset="../assets/images/cannabisinhands.jpg">
+                <img loading="lazy" decoding="async" src="../assets/images/cannabisinhands.jpg" alt="wedding" width="688" height="464" aria-hidden="true">
+            </picture>
+        </div>
+        <div class="cs-section2">
+            <picture class="cs-picture2">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="../assets/images/cannabisondesk.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="../assets/images/cannabisondesk.jpg">
+                <img loading="lazy" decoding="async" src="../assets/images/cannabisondesk.jpg" alt="wedding" width="674" height="504" aria-hidden="true">
+            </picture>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <h3 class="cs-h3">Professional Approach</h3>
+                    <p class="cs-li-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                    </p>
+                </li>
+                <li class="cs-li">
+                    <h3 class="cs-h3">Team of Experts</h3>
+                    <p class="cs-li-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                    </p>
+                </li>
+                <li class="cs-li">
+                    <h3 class="cs-h3">Affordable Prices</h3>
+                    <p class="cs-li-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                    </p>
+                </li>
+                <li class="cs-li">
+                    <h3 class="cs-h3">High Quality Ingredients</h3>
+                    <p class="cs-li-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                    </p>
+                </li>
+                <li class="cs-li">
+                    <h3 class="cs-h3">Crafted with Care and Precision</h3>
+                    <p class="cs-li-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                    </p>
+                </li>
+                <a href="" class="cs-button-solid">Learn About Our Process</a>
+            </ul>
+        </div>
+    </div>
+    <div class="cs-background-animation">
+        <div class="cs-wave-wrapper">
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <svg width="100%" height="100%" viewBox="0 0 1500 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                  <path class="dash dash_0" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+
+                  <path class="dash dash_2" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+
+                  <path class="dash dash_4" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                
+                  <path class="dash dash_6" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                
+                  <path class="dash dash_8" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+              </g>
+          </svg>
+        </div>
+    </div>
+    <!-- <img class="cs-flower" loading="lazy" decoding="async" src="../assets/images/9.png" alt="rosin" width="269" height="325" aria-hidden="true"> -->
+</section>
+                                
+                                
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+<section id="reviews-2246">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Testimonials</span>
+            <h2 class="cs-title">What Customers Say</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <div class="cs-image-group">
+                    <picture class="cs-picture">
+                        <img class="cs-image" loading="lazy" decoding="async" src="../assets/images/profile2.webp" alt="profile picture" width="64" height="64">
+                    </picture>
+                    <img class="cs-quote" aria-hidden="true" loading="lazy" decoding="async" src="../assets/svgs/quote.svg" alt="quote" width="24" height="20">
+                </div>
+                <p class="cs-item-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                </p>
+                <span class="cs-name">
+                    John Doe
+                </span>
+                <div class="cs-background-animation">
+                    <div class="cs-wave-wrapper">
+                      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                      <svg width="100%" height="100%" viewBox="0 0 1500 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                              <path class="dash dash_0" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_1" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_2" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_3" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_4" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_5" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_6" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_7" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_8" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                          </g>
+                      </svg>
+                    </div>
+                </div>
+            </li>
+            <li class="cs-item waves">
+                <div class="cs-image-group">
+                    <picture class="cs-picture">
+                        <img class="cs-image" loading="lazy" decoding="async" src="../assets/images/profile1.webp" alt="profile picture" width="64" height="64">
+                    </picture>
+                    <img class="cs-quote" aria-hidden="true" loading="lazy" decoding="async" src="../assets/svgs/quote.svg" alt="quote" width="24" height="20">
+                </div>
+                <p class="cs-item-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                </p>
+                <span class="cs-name">
+                    Jane Doe
+                </span>
+                <div class="cs-background-animation">
+                    <div class="cs-wave-wrapper-reverse">
+                      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                      <svg width="100%" height="100%" viewBox="0 0 1500 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                              <path class="dash dash_0" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_1" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_2" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_3" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_4" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_5" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_6" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_7" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_8" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                          </g>
+                      </svg>
+                    </div>
+                </div>
+            </li>
+            <li class="cs-item">
+                <div class="cs-image-group">
+                    <picture class="cs-picture">
+                        <img class="cs-image" loading="lazy" decoding="async" src="../assets/images/profile2.webp" alt="profile picture" width="64" height="64">
+                    </picture>
+                    <img class="cs-quote" aria-hidden="true" loading="lazy" decoding="async" src="../assets/svgs/quote.svg" alt="quote" width="24" height="20">
+                </div>
+                <p class="cs-item-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                </p>
+                <span class="cs-name">
+                    John Doe
+                </span>
+                <div class="cs-background-animation">
+                    <div class="cs-wave-wrapper">
+                      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                      <svg width="100%" height="100%" viewBox="0 0 1500 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                              <path class="dash dash_0" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_1" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_2" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_3" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_4" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_5" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_6" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_7" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_8" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                          </g>
+                      </svg>
+                    </div>
+                </div>
+            </li>
+            <li class="cs-item">
+                <div class="cs-image-group">
+                    <picture class="cs-picture">
+                        <img class="cs-image" loading="lazy" decoding="async" src="../assets/images/profile1.webp" alt="profile picture" width="64" height="64">
+                    </picture>
+                    <img class="cs-quote" aria-hidden="true" loading="lazy" decoding="async" src="../assets/svgs/quote.svg" alt="quote" width="24" height="20">
+                </div>
+                <p class="cs-item-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+                </p>
+                <span class="cs-name">
+                    Jane Doe
+                </span>
+                <div class="cs-background-animation">
+                    <div class="cs-wave-wrapper-reverse">
+                      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                      <svg width="100%" height="100%" viewBox="0 0 1500 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                              <path class="dash dash_0" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_1" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_2" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_3" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_4" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_5" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_6" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_7" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                              <path class="dash dash_8" d="M16,16 C76.235,16 77.932,77 138.167,77 C198.402,77 198.402,16 260.333,16 C320.568,16 322.265,77 382.5,77 C442.735,77 442.735,16 504.667,16 C564.902,16 566.598,77 626.833,77 C687.068,77 687.068,16 749,16 C809.235,16 810.932,77 871.167,77 C931.402,77 931.402,16 993.333,16 C1053.568,16 1055.265,77 1115.5,77 C1175.735,77 1175.735,16 1237.667,16 C1297.902,16 1299.598,77 1359.833,77 C1420.068,77 1420.068,16 1482,16" id="wave" stroke-width="12"></path>
+                          </g>
+                      </svg>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+                                
+                                
+                                
+<!-- ============================================ -->
+<!--                    Blog                      -->
+<!-- ============================================ -->
+
+<section id="blog-2199">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-text-wrapper">
+                <span class="cs-topper">Our Blog</span>
+                <h2 class="cs-title">Our Latest Blogs</h2>
+            </div>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <span class="cs-date">10<br>Jan</span>
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="../assets/images/5.png">
+                    <source media="(min-width: 601px)" srcset="../assets/images/5.png">
+                    <img loading="lazy" decoding="async" src="../assets/images/5.png" alt="people" width="411" height="320">
+                </picture>
+                <a href="" class="cs-flex">
+                    <div class="cs-info-wrapper">
+                        <span class="cs-category">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                            Cannabis
+                        </span>
+                        <span class="cs-comments">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/comment-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                            3 Comments
+                        </span>
+                    </div>
+                    <div class="cs-link">
+                        <h3 class="cs-h3">Lorem ipsum dolor sit amet?</h3>
+                        <p class="cs-item-text">Proin faucibus nec mauris a sodales, sed element um mi tincidunt. Sed eget viverra egestas nisi in...</p>
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <span class="cs-date">10<br>Jan</span>
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="../assets/images/resinonflower.png">
+                    <source media="(min-width: 601px)" srcset="../assets/images/resinonflower.png">
+                    <img loading="lazy" decoding="async" src="../assets/images/resinonflower.png" alt="people" width="411" height="320">
+                </picture>
+                <a href="" class="cs-flex">
+                    <div class="cs-info-wrapper">
+                        <span class="cs-category">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                            Cannabis
+                        </span>
+                        <span class="cs-comments">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/comment-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                            3 Comments
+                        </span>
+                    </div>
+                    <div class="cs-link">
+                        <h3 class="cs-h3">Lorem ipsum dolor sit amet?</h3>
+                        <p class="cs-item-text">Proin faucibus nec mauris a sodales, sed element um mi tincidunt. Sed eget viverra egestas nisi in...</p>
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <span class="cs-date">10<br>Jan</span>
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="../assets/images/cannabisondesk.jpg">
+                    <source media="(min-width: 601px)" srcset="../assets/images/cannabisondesk.jpg">
+                    <img loading="lazy" decoding="async" src="../assets/images/cannabisondesk.jpg" alt="people" width="411" height="320">
+                </picture>
+                <a href="" class="cs-flex">
+                    <div class="cs-info-wrapper">
+                        <span class="cs-category">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                            Cannabis
+                        </span>
+                        <span class="cs-comments">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/comment-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                            3 Comments
+                        </span>
+                    </div>
+                    <div class="cs-link">
+                        <h3 class="cs-h3">Lorem ipsum dolor sit amet?</h3>
+                        <p class="cs-item-text">Proin faucibus nec mauris a sodales, sed element um mi tincidunt. Sed eget viverra egestas nisi in...</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <a href="" class="cs-button-solid">Read More</a>
+    </div>
+</section>
+                                
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="faq-2216">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">F.A.Q</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+            <div class="cs-wrapper">
+                <ul class="cs-faq-group">
+                    <!-- Active class added as default -->
+                    <li class="cs-faq-item active">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                What does a process safety and reliability consultation firm do?
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                Why is process safety important for my organization?
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                How can your firm help improve our process safety and reliability?
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                What industries does your firm serve?
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                What qualifications and certifications do your consultants hold?
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                        </p>
+                    </li>
+                </ul>
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="../assets/images/cannabisfarmer.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="../assets/images/cannabisfarmer.jpg">
+                    <img loading="lazy" decoding="async" src="../assets/images/cannabisfarmer.jpg" alt="wedding photoshoot" width="590" height="801" aria-hidden="true">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+                                
+                                               
+{% include 'components/cta.html' %} {% endblock %}

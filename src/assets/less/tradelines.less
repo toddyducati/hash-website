@@ -1,0 +1,622 @@
+/* PAGE-SPECIFIC STYLES FOR THE BLOG AND ARTICLE PAGES */
+
+/*-- -------------------------- -->
+<---        Core Styles         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .blog-container {
+        margin: auto;
+        max-width: (1120/16em);
+        width: 94%;
+    }
+
+    .blog-link {
+        z-index: 1;
+        position: relative;
+        display: inline-block;
+        border-radius: (4/16rem);
+        margin: auto;
+        background-color: var(--headerColor);
+        min-width: (150/16rem);
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        padding: 0 (24/16rem);
+        text-decoration: none;
+        font-size: (16/16rem);
+        /* 46px - 56px */
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
+        font-weight: 700;
+        color: #fff;
+        transition: color 0.3s;
+        text-align: center;
+
+        &:before {
+            z-index: -1;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0;
+            border: 1px solid var(--headerColor);
+            border-radius: (4/16rem);
+            background: #fff;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            transition: opacity 0.3s;
+        }
+
+        &:hover {
+            color: var(--headerColor);
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Header           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #header {
+        z-index: 1;
+        position: relative;
+
+        .blog-container {
+            padding: clamp(100px, 14vw, 200px) 0 clamp(50px, 11vw, 100px);
+        }
+
+        .blog-header {
+            margin: 0;
+            width: 100%;
+            font-size: clamp(24px, 4vw, 48px);
+            line-height: 1.2em;
+            font-weight: 700;
+            color: #fff;
+            text-align: left;
+        }
+
+        .blog-bg {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: 100%;
+            width: 100%;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &:before {
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                /* color overlay */
+                content: "";
+                opacity: 0.6;
+                display: block;
+                background: #000;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Interior Page Header     -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    #int-hero {
+        z-index: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 30vh;
+        padding-top: (50/16rem);
+
+        picture {
+            z-index: -2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        h1 {
+            position: relative;
+            margin: 0 auto;
+            margin-top: (70/16rem);
+            margin-bottom: (30/16rem);
+            max-width: (500/16rem);
+            width: 96%;
+            font-size: (64/30rem);
+            color: #fff;
+            text-align: center;
+        }
+
+        p {
+            display: block;
+            margin: auto;
+            margin-bottom: (30/16rem);
+            max-width: (400/16rem);
+            width: 96%;
+            color: #fff;
+            text-align: center;
+        }
+
+        &:before {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.7;
+            display: block;
+            background: #000;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 48rem) {
+    #int-hero {
+        font-size: 100%;
+
+        h1 {
+            font-size: (64/16rem);
+        }
+    }
+}
+
+/* Small Desktop */
+@media only screen and (min-width: 64rem) {
+    #int-hero {
+        background-attachment: fixed;
+        min-height: (300/16rem);
+        height: auto;
+        padding-top: (180/16rem);
+        font-size: inherit;
+        padding-block-end: (100/16rem);
+    }
+}
+
+/*-- -------------------------- -->
+<---        Main Content        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .blog-container {
+        padding: clamp(60px, 7vw, 100px) 0;
+    }
+
+    .main-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: (50/16em);
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        row-gap: (50/16em);
+    }
+}
+
+/* Tablet - 1024px */
+@media only screen and (min-width: 64rem) {
+    .main-content-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        column-gap: (20/16em);
+    }
+}
+
+/*-- -------------------------- -->
+<---           Table            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #table-1835 {
+        padding: var(--sectionPadding);
+        position: relative;
+
+        .cs-container {
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+            position: relative;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            margin: 0 0 (24/16rem) 0;
+        }
+
+        .cs-button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: (12/16rem);
+        }
+
+        .cs-button {
+            font-size: (16/16rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            /* 8px - 16px vertical */
+            /* 24px - 32px horizontal */
+            padding: clamp(0.5rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2rem);
+            background-color: #fff;
+            color: var(--bodyTextColor);
+            border: 1px solid #e8e8e8;
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: var(--primary);
+                cursor: pointer;
+                color: #f7f7f7;
+            }
+
+            &.cs-active {
+                background-color: var(--primary);
+                color: #f7f7f7;
+            }
+        }
+
+        .cs-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            transition: transform 0.7s, opacity 0.3s, visibility 0.5s, top 0.3s, left 0.3s;
+            /* makes the transform scaling origin the top left corner, dictates the direction by which the scale transforms animate towards */
+            transform-origin: left top;
+            transform: scaleY(1);
+
+            &.cs-hidden {
+                /* prevents the mouse from interacting with it */
+                pointer-events: none;
+                /* hidden tables have a 0 opacity, and we animate the opacity to 1 when they become active */
+                opacity: 0;
+                /* by using visibility:hidden instead of display:none, we can see the animations from the opacity and transforms, display:none won't render animations. */
+                visibility: hidden;
+                position: absolute;
+                /* this top and left value help control the animation, by setting it to position absolute and left 0, the table won't fly off screen to the left, it will stop its position to be at the left edge of the .cs-container (left: 0). Same for the bottom:0 value, the table won't go past that position when it animates */
+                bottom: 0;
+                left: 0;
+                /* prevents the hidden tables from overflowing the section, and makes a nice animations to transition to and from */
+                transform: scaleY(0);
+
+                .cs-table {
+                    opacity: 0;
+                    /* when table is hidden, add these styles to the cs-image to animate from when cs-hidden is removed from the .cs-table */
+                    transform: translateY(2.1875rem);
+                }
+            }
+        }
+
+        .cs-table {
+            width: 100%;
+            /* removes the default space between table cells that normally exists */
+            border-collapse: collapse;
+        }
+
+        .cs-thead,
+        .cs-tbody {
+            width: 100%;
+        }
+
+        .cs-th,
+        .cs-td,
+        .cs-cta {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-align: center;
+            /* 80px - 120px */
+            min-width: clamp(5rem, 16vw, 7.5rem);
+            padding: (8/16rem) (8/16rem);
+            background-color: #fff;
+            color: var(--headerColor);
+            border: 1px solid #e8e8e8;
+
+            .disabled {
+                color: var(--headerColor);
+                opacity: .5;
+                cursor: auto;
+            }
+        }
+
+        .cs-thead {
+            .cs-th {
+                background-color: var(--primaryLight);
+                border: 1px solid var(--primary);
+            }
+        }
+
+        .cs-cta {
+            font-weight: 700;
+            width: 100%;
+            color: var(--primary);
+            border: none;
+            display: block;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #table-1835 {
+        .cs-th,
+        .cs-td,
+        .cs-cta {
+            padding: (16/16rem) (20/16rem);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Footer           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cs-footer {
+        background-color: #1a1a1a;
+        /* 60px - 100px top and bottom */
+        padding: clamp(3.75em, 7.82vw, 6.25em) (16/16em);
+        font-family: "Roboto", "Arial", sans-serif;
+
+        .cs-container {
+            margin: auto;
+            max-width: (1280/16em);
+            width: 100%;
+        }
+
+        .cs-logo-group {
+            position: relative;
+            /* takes up all the space, lets the other ul's wrap below it */
+            width: 100%;
+        }
+
+        .cs-logo {
+            display: block;
+            /* 28px - 44px */
+            margin-bottom: clamp(1.75em, 4.17vw, 2.75em);
+            height: auto;
+            /* 210px - 240px */
+            width: clamp(13.125em, 8vw, 15em);
+        }
+
+        .cs-logo-img {
+            height: auto;
+            width: 100%;
+        }
+
+        .cs-text {
+            margin: 0;
+            margin-bottom: (40/16rem);
+            /* changes to 521px at desktop */
+            max-width: (344/16rem);
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-nav {
+            margin: 0;
+            /* 32px - 40px */
+            margin-bottom: clamp(2em, 5.3vw, 2.5em);
+            padding: 0;
+            padding-left: (16/16em);
+        }
+
+        .cs-nav-li {
+            list-style: none;
+            line-height: 1.5em;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .cs-header {
+            position: relative;
+            display: block;
+            margin-bottom: (20/16rem);
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-nav-link {
+            position: relative;
+            text-decoration: none;
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColorWhite);
+
+            &:before {
+                position: absolute;
+                bottom: calc(-2 / 16 * 1rem);
+                left: 0;
+                /* underline */
+                content: "";
+                opacity: 1;
+                display: block;
+                /* current color of the parent */
+                background: currentColor;
+                height: (2/16rem);
+                width: 0%;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-bottom {
+            position: relative;
+            width: 100%;
+            padding-left: (16/16em);
+        }
+
+        .cs-copyright {
+            display: block;
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            color: #b4b2c7;
+        }
+
+        .cs-social {
+            position: absolute;
+            bottom: 0;
+            right: (16/16em);
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: (12/16em);
+        }
+
+        .cs-social-link {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #4e4b66;
+            height: (24/16rem);
+            width: (24/16rem);
+            transition: transform 0.3s, background-color 0.3s;
+
+            &:hover {
+                transform: translateY(calc(-3 / 16 * 1rem));
+                background-color: var(--primary);
+            }
+        }
+
+        .cs-social-img {
+            display: block;
+            height: (13/16rem);
+            width: auto;
+        }
+    }
+}
+
+/* Inbetween - 600px */
+@media only screen and (min-width: 37.5em) {
+    #cs-footer {
+        .cs-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            /* 48px - 60px */
+            column-gap: clamp(3em, 5.9vw, 3.75em);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #cs-footer {
+        .cs-logo-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* 20px - 60px */
+            margin-bottom: clamp(1.25em, 4vw, 3.75em);
+        }
+
+        .cs-logo {
+            margin: 0;
+        }
+
+        .cs-text {
+            margin: 0;
+            max-width: (521/16rem);
+            width: 50%;
+            text-align: right;
+        }
+
+        .cs-nav {
+            padding: 0;
+        }
+
+        .cs-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        .cs-social {
+            position: relative;
+            /* reset these positions */
+            bottom: auto;
+            right: auto;
+            flex-direction: row;
+        }
+    }
+}

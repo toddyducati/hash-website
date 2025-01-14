@@ -1,0 +1,41 @@
+.cs-button-solid {
+    font-size: (16/16rem);
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    width: auto;
+    padding: 0 (32/16rem);
+    background-color: var(--primary);
+    border-radius: (4/16rem);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    transition: color .3s;
+
+    &:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #fff;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: (4/16rem);
+        transition: width .3s;
+    }
+
+    &:hover {
+        color: #000;
+        &:before {
+            width: 100%;
+        }
+    }
+}

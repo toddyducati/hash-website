@@ -1,0 +1,112 @@
+/* STYLES FOR ABOVE THE FOLD */
+/*-- -------------------------- -->
+<---            Hero            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #hero-2153 {
+    padding: var(--sectionPadding);
+    /* 150px - 200px - top leaving extra space for the navigation */
+    /* 40px - 90px bottom */
+    padding: clamp(9.375rem, 16.95vw, 12.5rem) 1rem clamp(2.5rem, 4.82vw, 5.625rem) 1rem;
+    background-color: #F7F7F7;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #hero-2153 .cs-container {
+    width: 100%;
+    max-width: 44rem;
+    height: 60vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 5vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+  #hero-2153 .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  #hero-2153 .cs-flex {
+    /* prevents flexbox from squishing it */
+    flex: none;
+    gap: 20px;
+  }
+  #hero-2153 .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.438rem, 5vw, 3.813rem);
+    text-transform: uppercase;
+    color: var(--bodyTextColorWhite);
+    font-style: italic;
+    font-weight: 900;
+  }
+  #hero-2153 .cs-text {
+    max-width: none;
+    color: var(--bodyTextColorWhite);
+    line-height: 2em;
+  }
+  #hero-2153 .cs-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+  }
+  #hero-2153 video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #hero-2153 .cs-container {
+    max-width: 59rem;
+    height: 50vh;
+  }
+  #hero-2153 .cs-content {
+    flex-direction: row;
+    justify-content: space-between;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #hero-2153 .cs-flex {
+    width: 50%;
+  }
+  #hero-2153 .cs-title {
+    margin: 0;
+  }
+  #hero-2153 .cs-text {
+    max-width: 23.875rem;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #hero-2153 .cs-container {
+    max-width: 80rem;
+  }
+}
+/* Large Desktop 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #hero-2153 .cs-container {
+    max-width: 107.5rem;
+  }
+  #hero-2153 .cs-text {
+    max-width: 35rem;
+  }
+}
