@@ -9,7 +9,7 @@
     /* 150px - 200px - top leaving extra space for the navigation */
     /* 40px - 90px bottom */
     padding: clamp(9.375rem, 16.95vw, 12.5rem) 1rem clamp(2.5rem, 4.82vw, 5.625rem) 1rem;
-    background-color: #F7F7F7;
+    background-color: #f7f1e5;
     overflow: hidden;
     position: relative;
     z-index: 1;
