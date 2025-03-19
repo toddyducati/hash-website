@@ -6,6 +6,7 @@
 @media only screen and (min-width: 0rem) {
   #collection-1578 {
     padding: var(--sectionPadding);
+    background-color: #f7f1e5;
   }
   #collection-1578 .cs-container {
     width: 100%;
@@ -143,7 +144,7 @@
 @media only screen and (min-width: 0rem) {
   #RPsbs-2140 {
     padding: var(--sectionPadding);
-    background-color: #f7f7f7;
+    background-color: #f7f1e5;
     overflow: hidden;
     position: relative;
   }
@@ -890,7 +891,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 1.25rem;
-    background-color: #ffffff;
+    background-color: #f7f1e5;
   }
   #faq-2216 .cs-faq-item.active .cs-button {
     color: var(--primary);

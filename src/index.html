@@ -5,7 +5,7 @@ preloadImg: "/assets/images/landing.jpg"
 permalink: "/"
 tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
-  key: Home
+  key: Sample A
   order: 100
 ---
 
@@ -14,7 +14,7 @@ eleventyNavigation:
 <link rel="stylesheet" href="/assets/css/critical.css" />
 
 <!-- Script for Netlify Identity -->
-<script
+<!-- <script
   defer
   src="https://identity.netlify.com/v1/netlify-identity-widget.js"
 ></script>
@@ -28,7 +28,7 @@ eleventyNavigation:
       }
     });
   }
-</script>
+</script> -->
 
 <!-- JSON Schema Markup -->
 <script type="application/ld+json">
@@ -77,7 +77,7 @@ eleventyNavigation:
     <div class="cs-background-video">
         <!--Compress your video and upload it to a CDN like Digital Oceans Spaces so the video file doesn't cause load time issues. You can also remove the video tag and uncomment the picture tag to use a picture instead of a video.-->
         <video class="cs-video" playsinline autoplay muted loop poster="">
-            <source src="../assets/videos/hempoilvideo.mp4" type="video/mp4">
+            <source src="\assets\videos\hempoilvideo.mp4" type="video/mp4">
         </video>
     </div>
     <div class="cs-container">
@@ -111,11 +111,11 @@ eleventyNavigation:
                     <span class="cs-category">Badders</span>
                     <picture class="cs-background" aria-hidden="true">
                         <source media="(max-width: 600px)"
-                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                                srcset="/assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
                         <source media="(min-width: 601px)"
-                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                                srcset="/assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
                         <img loading="lazy" decoding="async"
-                                src="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png"
+                                src="/assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png"
                                 width="365" height="201" alt="shoes">
                     </picture>
                 </a>
@@ -125,11 +125,11 @@ eleventyNavigation:
                     <span class="cs-category">Vapes</span>
                     <picture class="cs-background" aria-hidden="true">
                         <source media="(max-width: 600px)"
-                                srcset="../assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png">
+                                srcset="/assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png">
                         <source media="(min-width: 601px)"
-                                srcset="../assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png">
-                        <img loading="lazy" decoding="async"
-                                src="../assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png" width="365"
+                                srcset="/assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png">
+                        <img decoding="async"
+                                src="/assets/images/240826_hash_trop cookies_rosin dispo-5-trop_5.png" width="365"
                                 height="201" alt="purse">
                     </picture>
                 </a>
@@ -139,11 +139,11 @@ eleventyNavigation:
                     <span class="cs-category">Resin</span>
                     <picture class="cs-background" aria-hidden="true">
                         <source media="(max-width: 600px)"
-                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                                srcset="/assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
                         <source media="(min-width: 601px)"
-                                srcset="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
+                                srcset="/assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png">
                         <img loading="lazy" decoding="async"
-                                src="../assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png"
+                                src="/assets/images/240423_HASH_Tropicana Cookies_Live Rosin.png"
                                 width="365" height="201" alt="shoes">
                     </picture>
                 </a>
