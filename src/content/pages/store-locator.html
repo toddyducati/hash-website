@@ -14,6 +14,7 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/store-locator.css">
+    <script src="/assets/js/maps.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -48,53 +49,7 @@ eleventyNavigation:
     <!-- ============================================ -->
 
     <section id="locator-1001">
-        <div class="cs-container">
-            <div id="map"></div>
-                <div id="store-list"></div>
-
-                <script>
-                    let map;
-                    const stores = [
-                    { name: "Store 1", lat: 40.712776, lng: -74.005974, address: "New York, NY" },
-                    { name: "Store 2", lat: 34.052235, lng: -118.243683, address: "Los Angeles, CA" },
-                    { name: "Store 3", lat: 41.878113, lng: -87.629799, address: "Chicago, IL" }
-                    ];
-
-                    function initMap() {
-                    map = new google.maps.Map(document.getElementById("map"), {
-                        center: { lat: 39.8283, lng: -98.5795 }, // Center of the US
-                        zoom: 4,
-                    });
-
-                    const storeList = document.getElementById("store-list");
-
-                    stores.forEach((store) => {
-                        const marker = new google.maps.Marker({
-                        position: { lat: store.lat, lng: store.lng },
-                        map,
-                        title: store.name,
-                        });
-
-                        const storeEl = document.createElement("div");
-                        storeEl.className = "store";
-                        storeEl.innerHTML = `<strong>${store.name}</strong><br>${store.address}`;
-                        storeList.appendChild(storeEl);
-                    });
-                    }
-                </script>
-
-                <script async
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeurRuCFYbdMNl_UEgPijqckFEOXjceh4&callback=initMap">
-                </script>
-            <div class="cs-content">
-                <span class="cs-topper">Quality CANNABIS</span>
-                <h2 class="cs-title">Made By People Who Care</h2>
-                <p class="cs-text">
-                    Our team of experts brings years of knowledge and dedication to every batch. They know that the best products come from meticulous craftsmanship and care.
-                </p>
-                <a href="/store-locator" class="cs-button-solid">Find Near You</a>
-            </div>
-        </div>
+        <div id="map"></div>
     </section>
 
 

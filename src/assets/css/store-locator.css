@@ -8,6 +8,10 @@
     padding: var(--sectionPadding);
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   }
+  #locator-1001 #map {
+    height: 90vh;
+    width: 100%;
+  }
   #locator-1001 .cs-container {
     width: 100%;
     /* changes to 1280px at desktop */
