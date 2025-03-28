@@ -4,7 +4,7 @@ backend:
 
 local_backend: true
 # change url to a link to the image you want to use, no file paths, must be a URL
-logo_url: https://callowhillwebdesigns.com/assets/svgs/callowhillxsuperiortradelines.png
+logo_url: https://callowhillwebdesigns.com/assets/svgs/logo.svg
 
 media_folder: "src/assets/images/blog"
 public_folder: "/assets/images/blog"

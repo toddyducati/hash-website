@@ -13,9 +13,10 @@ loader.load().then(() => {
 
 function displayMap() {
   const mapOptions = {
-    center: { lat: -33.860664, lng: 151.208138 },
-    zoom: 14,
+    center: { lat: 39.0458, lng: -76.6413 },
+    zoom: 10,
   };
+
   const mapDiv = document.getElementById('map');
   return new google.maps.Map(mapDiv, mapOptions);
 }
