@@ -1,0 +1,101 @@
+---
+title: 'Find Dispensary | HASH'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/cabinets2.jpg'
+permalink: 'store-locator/'
+eleventyNavigation:
+    key: Store Locator
+    order: 600
+    hide: true
+    hideOnDesktop: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/store-locator.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Find a Dispensary</span>
+            <p class="cs-text">
+                
+            </p>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/store-locator" class="cs-link cs-active">Dispensary Locator</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/badder.jpg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/badder.jpg">
+            <img decoding="async" src="/assets/images/badder.jpg" alt="construction" width="1280" height="568" aria-hidden="true">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--              Dispensary Locator              -->
+    <!-- ============================================ -->
+
+    <section id="locator-1001">
+        <div class="cs-container">
+            <div id="map"></div>
+                <div id="store-list"></div>
+
+                <script>
+                    let map;
+                    const stores = [
+                    { name: "Store 1", lat: 40.712776, lng: -74.005974, address: "New York, NY" },
+                    { name: "Store 2", lat: 34.052235, lng: -118.243683, address: "Los Angeles, CA" },
+                    { name: "Store 3", lat: 41.878113, lng: -87.629799, address: "Chicago, IL" }
+                    ];
+
+                    function initMap() {
+                    map = new google.maps.Map(document.getElementById("map"), {
+                        center: { lat: 39.8283, lng: -98.5795 }, // Center of the US
+                        zoom: 4,
+                    });
+
+                    const storeList = document.getElementById("store-list");
+
+                    stores.forEach((store) => {
+                        const marker = new google.maps.Marker({
+                        position: { lat: store.lat, lng: store.lng },
+                        map,
+                        title: store.name,
+                        });
+
+                        const storeEl = document.createElement("div");
+                        storeEl.className = "store";
+                        storeEl.innerHTML = `<strong>${store.name}</strong><br>${store.address}`;
+                        storeList.appendChild(storeEl);
+                    });
+                    }
+                </script>
+
+                <script async
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeurRuCFYbdMNl_UEgPijqckFEOXjceh4&callback=initMap">
+                </script>
+            <div class="cs-content">
+                <span class="cs-topper">Quality CANNABIS</span>
+                <h2 class="cs-title">Made By People Who Care</h2>
+                <p class="cs-text">
+                    Our team of experts brings years of knowledge and dedication to every batch. They know that the best products come from meticulous craftsmanship and care.
+                </p>
+                <a href="/store-locator" class="cs-button-solid">Find Near You</a>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
