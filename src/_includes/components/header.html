@@ -3,38 +3,10 @@
 <!-- ============================================ -->
 
 <header id="cs-navigation">
-    <div class="cs-top-bar">
-        <div class="cs-top-container">
-            <div class="cs-top-social">
-                <a href="" class="cs-social-link">
-                    <img class="cs-social-icon" src="../../assets/svgs/facebook.svg" alt="logo" width="12" height="12" aria-hidden="true" decoding="async">
-                </a>
-                <a href="" class="cs-social-link">
-                    <img class="cs-social-icon" src="../../assets/svgs/instagram.svg" alt="logo" width="12" height="12" aria-hidden="true" decoding="async">
-                </a>
-                <a href="" class="cs-social-link">
-                    <img class="cs-social-icon" src="../../assets/svgs/tiktok.svg" alt="logo" width="12" height="12" aria-hidden="true" decoding="async">
-                </a>
-            </div>
-            <!--We have 2 cs-logo links, this is because on mobile it needs to be in the same container as the nav toggle, and on desktop it needs to be in the top container. This is the simplest solution to do this-->
-            <a href="" class="cs-logo cs-top-logo" aria-label="back to home">
-                <!--White Logo-->
-                <!--This nav has an on scroll effect to rotate the images to swap the light version with the dark version so it shows up on the white background that animates behind the nav-->
-                <img class="cs-default" src="../../assets/svgs/Asset 4.svg" alt="logo" width="197" height="43" aria-hidden="true" decoding="async">
-                <!--Dark Logo-->
-                <img class="cs-onscroll" src="../../assets/svgs/Asset 3.svg" alt="logo" width="197" height="43" aria-hidden="true" decoding="async">
-            </a>
-            <a href="" class="cs-button-solid cs-nav-button">Shop Now</a>
-        </div>
-    </div>
     <div class="cs-container">
         <!--Nav Logo-->
-        <a href="" class="cs-logo cs-bottom-logo" aria-label="back to home">
-            <!--White Logo-->
-            <!--This nav has an on scroll effect to rotate the images to swap the light version with the dark version so it shows up on the white background that animates behind the nav-->
-            <img class="cs-default" src="../../assets/svgs/Asset 4.svg" alt="logo" width="197" height="43" aria-hidden="true" decoding="async">
-            <!--Dark Logo-->
-            <img class="cs-onscroll" src="../../assets/svgs/Asset 3.svg" alt="logo" width="197" height="43" aria-hidden="true" decoding="async">
+        <a href="" class="cs-logo" aria-label="back to home">
+            <img src="\assets\svgs\Asset 6.svg" width="60" height="60" aria-hidden="true" decoding="async">
         </a>
         <!--Navigation List-->
         <nav class="cs-nav" role="navigation">
@@ -47,8 +19,6 @@
                 </div>
             </button>
             <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-            {# This also allows for easy substitution of CodeStitch navigations. Just replace the .cs-ul-wrapper in the new navigation with this one to have full eleventyNavigation support #}
-            
             <div class="cs-ul-wrapper">
                 <ul id="cs-expanded" class="cs-ul">
                     {% set navPages = collections.all | eleventyNavigation %}
@@ -98,14 +68,14 @@
                                     {% for child in entry.children %}
                                     {# Replace href="{{ child.url }}" #}
                                         <li class="cs-drop-li">
-                                            <a href="" class="cs-li-link cs-drop-link">{{ child.key }}</a>
+                                            <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.key }}</a>
                                         </li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
                                 {# Normal pages are rendered as <a> tags, in the normal way you'd expect #}
                                     {# Replace href="{{ entry.url }}" #}
-                                <a href="" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
+                                <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
                                     {{ entry.key }}
                                 </a>
                             {% endif %}
@@ -114,6 +84,12 @@
                 </ul>
             </div>
         </nav>
-        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle, just make sure you got the CSS with dark mode code to go with it-->
+        <a href="" class="cs-button-transparent cs-nav-button">Shop Now</a>
+        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+        <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+            <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+        </button> -->
     </div>
 </header>
+                                
