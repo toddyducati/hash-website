@@ -1,0 +1,56 @@
+---
+title: 'Find Dispensary | HASH'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/cabinets2.jpg'
+permalink: 'store-locator/'
+eleventyNavigation:
+    key: Store Locator
+    order: 600
+    hide: true
+    hideOnDesktop: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/store-locator.css">
+    <script src="/assets/js/maps.js"></script>
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Find a Dispensary</span>
+            <p class="cs-text">
+                
+            </p>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/store-locator" class="cs-link cs-active">Dispensary Locator</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/badder.jpg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/badder.jpg">
+            <img decoding="async" src="/assets/images/badder.jpg" alt="construction" width="1280" height="568" aria-hidden="true">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--              Dispensary Locator              -->
+    <!-- ============================================ -->
+
+    <section id="locator-1001">
+        <div id="map"></div>
+    </section>
+
+
+{% endblock %}

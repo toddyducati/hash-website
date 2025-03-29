@@ -23,6 +23,10 @@
   button {
     all: unset;
   }
+  .cs-devtext {
+    color: var(--primary) !important;
+    text-decoration: underline !important;
+  }
   .cs-topper {
     display: block;
     margin-bottom: 0.25rem;
@@ -226,7 +230,11 @@
     width: 92%;
   }
   h1,
-  h2,
+  h2 {
+    margin: 0;
+    font-family: Forma DJR Micro, Arial, sans-serif;
+    color: var(--headerColor);
+  }
   h3,
   h4,
   h5,
@@ -542,7 +550,7 @@
     height: auto;
     padding-bottom: 2.4em;
     opacity: 0;
-    background-color: #fff;
+    background-color: #000;
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     overflow: hidden;
     position: absolute;
