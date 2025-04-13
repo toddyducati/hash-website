@@ -17,7 +17,7 @@ module.exports = {
         "instagram": "https://www.instagram.com/",
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-    "domain": "https://www.hashhashbaby.com",
+    "domain": "https://www.hashthebrand.com",
     "googleMapsAPI": "AIzaSyBeurRuCFYbdMNl_UEgPijqckFEOXjceh4",
     "googleMapKey": "807d43c59df542d4",
     "mapsJSKey": "AIzaSyAg4yFFPXR5CFyypLFbSB2-U3dXTx0qa4I"

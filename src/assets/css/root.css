@@ -265,40 +265,28 @@
     left: 0;
     opacity: 0;
   }
-  /* Acumin Variable */
-  @font-face {
-    font-family: "Acumin Variable";
-    font-display: swap;
-    src: local(""), url("/assets/fonts/Acumin Variable.otf") format("opentype"), /* Chrome 26+, Opera 23+, Firefox 39+ */;
-  }
-  /* Ragley */
-  @font-face {
-    font-family: "Ragley";
-    font-display: swap;
-    src: local(""), url("/assets/fonts/Ragley.otf") format("opentype"), /* Chrome 26+, Opera 23+, Firefox 39+ */;
-  }
   /* Mufferaw */
   @font-face {
     font-family: 'Mufferaw';
-    src: url('/assets/fonts/Mufferaw/Mufferaw Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Mufferaw/Mufferaw Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: 'Mufferaw';
-    src: url('/assets/fonts/Mufferaw/Mufferaw Italic.ttf') format('truetype');
+    src: url('/assets/fonts/Mufferaw/Mufferaw Italic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
   }
   @font-face {
     font-family: 'Mufferaw';
-    src: url('/assets/fonts/Mufferaw/Mufferaw Bold.ttf') format('truetype');
+    src: url('/assets/fonts/Mufferaw/Mufferaw Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
   }
   @font-face {
     font-family: 'Mufferaw';
-    src: url('/assets/fonts/Mufferaw/Mufferaw Bold Italic.ttf') format('truetype');
+    src: url('/assets/fonts/Mufferaw/Mufferaw Blod Italic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
   }
@@ -377,7 +365,7 @@
   }
   @font-face {
     font-family: 'Forma DJR Micro';
-    src: url('/assets/fonts/Forma DJR Micro/Forma DJR Micro Black.ttf') format('truetype');
+    src: url('/assets/fonts/Forma DJR Micro/Forma DJR Micro Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
   }
