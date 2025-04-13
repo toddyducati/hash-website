@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "category_name": "Solvents",
+      "category_desc": "Our Live Resin and other solvent extracts provide a pure, potent experience.",
+      "items": [
+        {
+          "item_name": "Electric Peanut Butter",
+          "item_desc": "True to its name, our creamy Electric Peanut Butter Live Resin badder features a nutty aroma complementary to its sweet flavor.",
+          "item_image": "/assets/images/blog/electric-peanut-butter-hash.png",
+          "item_tags": [
+            "product",
+            "Solvents"
+          ]
+        },
+        {
+          "item_name": "Thai Kush",
+          "item_image": "/assets/images/blog/thai-kush-hash.png",
+          "item_desc": "Our Thai Kush Live Resin Badder contains a funky flavor and aroma spiced with notes of citrus.",
+          "item_tags": [
+            "product",            
+            "Solvents"
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Solventless",
+      "category_desc": "HASH's solventless extraction techniques ensure that our live rosin products provide a quality high.",
+      "items": [
+        {
+          "item_name": "Aloha Lion",
+          "item_desc": "Cold cured Live Rosin made with fresh-frozen flower.",
+          "item_image": "/assets/images/blog/aloha-lion-hash.png",
+          "item_tags": [
+            "product",
+            "Solventless"
+          ]
+        },
+        {
+          "item_image": "/assets/images/blog/tropicana-cookies-hash.png",
+          "item_name": "Tropicana Cookies",
+          "item_desc": "A full-spectrum Live Rosin with a spiced tropical sweetness.",
+          "item_tags": [
+            "product",
+            "Solventless"
+          ]
+        }
+      ]
+    }
+  ]
+}

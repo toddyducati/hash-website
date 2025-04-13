@@ -73,10 +73,23 @@ eleventyNavigation:
     -->
 
     <div id="cs-menu-group-1018">
+        {%- if collections.files | length == 0 -%}
+            <h1>No Products Found</h1>
+        {%- else -%}
+            {%- for post in collections.post | reverse -%}
+            {%- endfor -%}
+        {%- endif -%}
+
         <div class="cs-button-group">
-            <button class="cs-button cs-active" data-filter="one" onclick="window.location.href='#cs-menu-group';">
-                Solvent
-            </button>
+            {% for category in collections %}
+                <button class="cs-button">
+                    Solvent
+                </button>
+            {% endfor %}
+        </div>
+
+        <div class="cs-button-group">
+            
             <button class="cs-button" data-filter="two" onclick="window.location.href='#cs-menu-group';">
                 Solventless
             </button>
@@ -90,6 +103,9 @@ eleventyNavigation:
                 Vapes
             </button>
         </div>
+
+
+
         <!--Breakfast-->
         <div id="cs-menu1-1018" class="cs-menu-group" data-category="one">
             <!--Breakfast Section 1-->

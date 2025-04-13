@@ -108,6 +108,10 @@ module.exports = function (eleventyConfig) {
      *  https://moment.github.io/luxon/api-docs/index.html#datetime
      */
     eleventyConfig.addFilter("postDate", filterPostDate);
+
+    eleventyConfig.addFilter('log', value => {
+        console.log(value)
+      });
     /**=====================================================================
                                     END FILTERS
     =======================================================================*/
